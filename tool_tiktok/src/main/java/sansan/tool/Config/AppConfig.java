@@ -1,4 +1,12 @@
 package sansan.tool.Config;
 
-public class AppConfig {
+import org.springframework.stereotype.Component;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Component
+public interface AppConfig {
+
+    Map<String, String> TELEGRAM = new HashMap<>();
 }

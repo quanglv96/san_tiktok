@@ -1,4 +1,4 @@
-package sansan.tool.Service.Impl;
+package sansan.tool.Service;
 
 public interface DataCrawlerService {
 }

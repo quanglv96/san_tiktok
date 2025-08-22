@@ -1,4 +1,14 @@
 package sansan.tool.utils;
 
-public class AppType {
+import lombok.Getter;
+
+@Getter
+public enum AppType {
+    TELEGRAM("TELEGRAM");
+
+    private final String type;
+
+    AppType(String type) {
+        this.type = type;
+    }
 }

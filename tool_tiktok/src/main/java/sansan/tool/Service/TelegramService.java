@@ -1,4 +1,5 @@
 package sansan.tool.Service;
 
-public class TelegramService {
+public interface TelegramService {
+    void sendException(String message, String url);
 }
