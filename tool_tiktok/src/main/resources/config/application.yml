@@ -41,4 +41,3 @@ logging:
     root: DEBUG
     org.springframework: DEBUG
     sansan.tool: DEBUG
-sansan_config:

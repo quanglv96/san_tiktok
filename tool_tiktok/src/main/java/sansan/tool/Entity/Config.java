@@ -1,6 +1,8 @@
 package sansan.tool.Entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,22 +14,22 @@ import lombok.Data;
 @Data
 public class Config {
     @Id
-    @JsonProperty("id")
+    @Column(name = "id")
     private String id;
 
-    @JsonProperty("type")
+    @Column(name = "type")
     private String type; //TELEGRAM, EMAIL, etc. => AppType
 
-    @JsonProperty("key")
+    @Column(name = "key")
     private String key;
 
-    @JsonProperty("value")
+    @Column(name = "value")
     private String value;
 
-    @JsonProperty("description")
+    @Column(name = "description")
     private String description;
 
-    @JsonProperty("status")
+    @Column(name = "status")
     private String status; // "ACTIVE", "INACTIVE" => AppStatus
 
 }

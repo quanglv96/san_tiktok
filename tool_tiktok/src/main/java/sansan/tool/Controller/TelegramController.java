@@ -1,13 +1,16 @@
 package sansan.tool.Controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sansan.tool.DTO.RequestDTO;
+import sansan.tool.DTO.TelegramDTO.ReceiveMessageDTO;
 import sansan.tool.Service.TelegramService;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/telegram")
@@ -19,5 +22,11 @@ public class TelegramController {
     public String sendMessageAdmin(@RequestBody RequestDTO requestDTO) {
         telegramService.sendException(requestDTO.getMessage(), requestDTO.getUrl());
         return "Message sent successfully!";
+    }
+
+    @PostMapping("/receive-message")
+    public ResponseEntity<String> receiveMessage(@RequestBody ReceiveMessageDTO update) {
+        telegramService.receiveMessage(update);
+        return ResponseEntity.ok("Message received successfully!");
     }
 }

@@ -9,4 +9,5 @@ import java.util.Map;
 public interface AppConfig {
 
     Map<String, String> TELEGRAM = new HashMap<>();
+    Map<String, String> SHOPLUS = new HashMap<>();
 }
