@@ -8,18 +8,23 @@ spring:
     name: san_tiktok  # Tên ứng dụng
   datasource:
     url: jdbc:oracle:thin:@//localhost:1521/XEPDB1
-    username: san_tiktok
+    username: xiangquang
     password: Xiang@96
     driver-class-name: oracle.jdbc.OracleDriver
   jpa:
     hibernate:
       ddl-auto: validate
-    #     validate: Hibernate sẽ kiểm tra entity với bảng có sẵn- Không tạo bảng mới nếu chưa có-Không update schema tự động-Nếu entity mới không có trong DB, nó sẽ báo lỗi startup.
+#      create → Mỗi lần chạy sẽ xóa DB cũ và tạo mới toàn bộ bảng. (cẩn thận vì mất dữ liệu)
+#      create-drop → Tạo mới bảng khi start, và drop hết khi stop project.
+#      update → Khuyên dùng cho dev/test: Tự động cập nhật bảng theo entity (thêm cột, thêm bảng).
+#      validate → Chỉ kiểm tra entity có khớp DB không, không tự tạo.
+#      none → Không làm gì cả.
     show-sql: true      # Hiển thị câu lệnh SQL trong console
     database-platform: org.hibernate.dialect.Oracle12cDialect
     properties:
       hibernate:
-        default_schema: ${spring.application.name}
+        dialect: org.hibernate.dialect.Oracle12cDialect
+  #        default_schema: ${spring.application.name}
 #eureka:
 #  client:
 #    service-url:
